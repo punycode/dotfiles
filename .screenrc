@@ -1,0 +1,7 @@
+# standard stuff
+vbell off
+defutf8 on
+
+# caption and hardstatus
+caption always '%{= wk}[ %{+ r}%H%{+ k} ] cur: %{=b r}%n%f %t%{-} others: %{= k}[%{+ r}%-Lw%+Lw%{+ k}]%-021= %{= k}[ %{+ r}%c %Y-%m-%d%{+ k} ]'
+
