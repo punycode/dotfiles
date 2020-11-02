@@ -1,0 +1,9 @@
+[submodule ".vim/bundle/editorconfig-vim"]
+	path = .vim/bundle/editorconfig-vim
+	url = https://github.com/editorconfig/editorconfig-vim.git
+[submodule ".zsh"]
+	path = .zsh
+	url = https://github.com/ohmyzsh/ohmyzsh.git
+[submodule ".zsh.custom/themes/powerlevel10k"]
+	path = .zsh.custom/themes/powerlevel10k
+	url = https://github.com/romkatv/powerlevel10k.git

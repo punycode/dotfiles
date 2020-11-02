@@ -1,0 +1,41 @@
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+	interactive = auto
+[push]
+	default = simple
+[alias]
+	br = branch
+	ci = commit
+	co = checkout
+	dump = cat-file -p
+	hist = log --pretty=format:\"%h %ai | %s%d [%an]\" --graph --date=short
+	last = log -1 HEAD
+	st = status
+	stash--unapply = !git stash show -p | git apply -R
+	type = cat-file -t
+	apportier = fetch
+	amend-here = commit --amend -C HEAD
+	typo = !git add -u && git commit -m \"Fix: Typo!\"
+	praise = blame
+	pfusch = push -f
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --abbrev=8
+[rerere]
+	enabled = 1
+[core]
+	autocrlf = input
+	excludesfile = ~/.gitignore.global
+[cola]
+	savewindowsettings = false
+[status]
+	showUntrackedFiles = no
+[merge]
+	conflictstyle = diff3
+	renamelimit = 16000
+	tool = opendiff
+[pull]
+	rebase = true
+[include]
+	path = ~/.gitconfig.local
+	path = ~/.gitconfig.secrets

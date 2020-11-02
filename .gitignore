@@ -1,0 +1,5 @@
+# Don't check in secrets
+/*.secrets
+
+# Ignore local customizations
+/*.local
