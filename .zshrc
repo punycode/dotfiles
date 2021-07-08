@@ -76,6 +76,10 @@ CASE_SENSITIVE="true"
 # Would you like to use another custom folder than $ZSH/custom?
 ZSH_CUSTOM="${HOME}/.zsh.custom"
 
+# Add custom completions & functions
+fpath+=(${ZSH_CUSTOM}/functions)
+fpath+=(${ZSH_CUSTOM}/completions)
+
 # Which plugins would you like to load?
 # Standard plugins can be found in ~/.oh-my-zsh/plugins/*
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
