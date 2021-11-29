@@ -40,11 +40,12 @@ export PATH=$GOPATH/bin:$PATH
 # OS-specific parts (exports)
 case `uname -s` in
 *BSD|Darwin)
-  # Use Go 1.15 for now (1.16 is not yet supported for some projects)
-  export PATH=/usr/local/opt/go@1.15/bin:$PATH
-  # Set java version to use
+  # Set Java version to use
   export JAVA_HOME=`/usr/libexec/java_home -d64 -v11\*`
+  export GRAALVM_HOME=/Library/Java/JavaVirtualMachines/graalvm-ce-java11-21.2.0
   # Python stuff
+  export PATH="/usr/local/opt/python@3.8/libexec/bin:$PATH"
+  export PATH="/usr/local/opt/python@3.8/bin:$PATH"
   export PATH="${HOME}/Library/Python/3.8/bin:$PATH"
   ;;
 esac
