@@ -5,6 +5,7 @@
 	interactive = auto
 [push]
 	default = simple
+	autoSetupRemote = true
 [alias]
 	br = branch
 	ci = commit
