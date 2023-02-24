@@ -41,12 +41,12 @@ export PATH=$GOPATH/bin:$PATH
 case `uname -s` in
 *BSD|Darwin)
   # Set Java version to use
-  export JAVA_HOME=`/usr/libexec/java_home -v11\*`
-  export GRAALVM_HOME=/Library/Java/JavaVirtualMachines/graalvm-ce-java11-21.2.0
+  export JAVA_VERSION=11.0
   # Python stuff
-  export PATH="/usr/local/opt/python@3.8/libexec/bin:$PATH"
-  export PATH="/usr/local/opt/python@3.8/bin:$PATH"
-  export PATH="${HOME}/Library/Python/3.8/bin:$PATH"
+  export PATH="/usr/local/opt/python@3.9/libexec/bin:$PATH"
+  export PATH="/usr/local/opt/python@3.9/bin:$PATH"
+  # NodeJS stuff
+  export PATH="/usr/local/opt/node@16/bin:$PATH"
   ;;
 esac
 
