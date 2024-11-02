@@ -28,27 +28,9 @@ export EDITOR=vim
 # Something LESS
 export LESS="-F -X $LESS"
 
-# Ruby gems in $HOME
-if which rbenv > /dev/null; then
-  eval "$(rbenv init -)"
-fi
-
 # Google Go
 export GOPATH=$HOME/Projects/Go
 export PATH=$GOPATH/bin:$PATH
-
-# OS-specific parts (exports)
-case `uname -s` in
-*BSD|Darwin)
-  # Set Java version to use
-  export JAVA_VERSION=11.0
-  # Python stuff
-  export PATH="/usr/local/opt/python@3.9/libexec/bin:$PATH"
-  export PATH="/usr/local/opt/python@3.9/bin:$PATH"
-  # NodeJS stuff
-  export PATH="/usr/local/opt/node@16/bin:$PATH"
-  ;;
-esac
 
 # Device-local profile settings
 if [ -f "${HOME}/.profile.local" ]; then
@@ -58,10 +40,6 @@ fi
 # Secrets from environment variables
 if [ -f "${HOME}/.profile.secrets" ]; then
   source "${HOME}/.profile.secrets"
-fi
-
-if false; then
-complete -C /usr/local/bin/mc mc
 fi
 
 # Kubectl plugin manager
