@@ -78,10 +78,10 @@ plugins=(fzf)
 
 source $ZSH/oh-my-zsh.sh
 
-# Source the default profile
+# Source the default shell profile
 source ~/.profile
 
-# ZSH options
+# Configuration for ZSH history
 export HISTSIZE=500000
 export SAVEHIST=500000
 setopt extended_history          # Write the history file in the ":start:elapsed;command" format.
