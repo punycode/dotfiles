@@ -44,3 +44,6 @@ fi
 
 # Kubectl plugin manager
 PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+
+# Add some often used shortcut functions to BC
+export BC_ENV_ARGS="-l $HOME/.bcrc"

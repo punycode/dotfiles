@@ -1,0 +1,14 @@
+define pow(a, b) {
+    if (scale(b) == 0) {
+        return a ^ b
+    }
+    return e(b*l(a))
+}
+
+define l10(a) {
+  return l(a)/l(10)
+}
+
+define l2(a) {
+  return l(a)/l(2)
+}
