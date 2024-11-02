@@ -3,3 +3,15 @@
 
 # Ignore local customizations
 /*.local
+
+# Ignore some top level folders from home directory on macOS
+# which should not be considered for files to commit
+/Applications/
+/Desktop/
+/Documents/
+/Downloads/
+/Library/
+/Movies/
+/Music/
+/Pictures/
+/Private/
