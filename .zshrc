@@ -1,8 +1,3 @@
-# Direnv should run before P10K instant prompt
-if which direnv > /dev/null; then
-  eval "$(direnv hook zsh)"
-fi
-
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 

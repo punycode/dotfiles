@@ -47,3 +47,8 @@ PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 
 # Add some often used shortcut functions to BC
 export BC_ENV_ARGS="-l $HOME/.bcrc"
+
+# Enable direnv shell hooks
+if which direnv > /dev/null; then
+  eval "$(direnv hook zsh)"
+fi
