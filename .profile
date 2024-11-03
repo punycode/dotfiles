@@ -52,3 +52,11 @@ export BC_ENV_ARGS="-l $HOME/.bcrc"
 if which direnv > /dev/null; then
   eval "$(direnv hook zsh)"
 fi
+
+# Setup ASDF (either git or homebrew install
+if [ -r "${HOME}/.asdf/asdf.sh" ]; then
+  source "${HOME}/.asdf/asdf.sh"
+elif which brew > /dev/null; then
+  _ASDF_PREFIX=$(brew --prefix asdf 2>/dev/null)
+  [ -n "${_ASDF_PREFIX}" ] && source ${_ASDF_PREFIX}/libexec/asdf.sh
+fi
