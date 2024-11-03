@@ -547,6 +547,8 @@ require('lazy').setup({
         -- ts_ls = {},
         --
 
+        gitlab_ci_ls = {},
+
         lua_ls = {
           -- cmd = {...},
           -- filetypes = { ...},
@@ -561,6 +563,12 @@ require('lazy').setup({
             },
           },
         },
+
+        puppet = {},
+
+        terraformls = {},
+
+        yamlls = {},
       }
 
       -- Ensure the servers and tools above are installed
