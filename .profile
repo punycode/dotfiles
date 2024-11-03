@@ -23,7 +23,9 @@ export LANG=en_US.UTF-8
 export LC_ALL="${LANG}"
 
 # Default editor
-export EDITOR=vim
+if which nvim > /dev/null; then
+  export EDITOR=nvim
+fi
 
 # Something LESS
 export LESS="-F -X $LESS"
