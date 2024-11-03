@@ -28,10 +28,6 @@ export EDITOR=vim
 # Something LESS
 export LESS="-F -X $LESS"
 
-# Google Go
-export GOPATH=$HOME/Projects/Go
-export PATH=$GOPATH/bin:$PATH
-
 # Device-local profile settings
 if [ -f "${HOME}/.profile.local" ]; then
   source "${HOME}/.profile.local"
@@ -60,3 +56,7 @@ elif which brew > /dev/null; then
   _ASDF_PREFIX=$(brew --prefix asdf 2>/dev/null)
   [ -n "${_ASDF_PREFIX}" ] && source ${_ASDF_PREFIX}/libexec/asdf.sh
 fi
+
+# Setup a Google Go default path
+export GOPATH=$HOME/Projects/Go
+export PATH=$GOPATH/bin:$PATH
