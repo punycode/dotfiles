@@ -72,6 +72,10 @@ plugins=(fzf)
 
 source $ZSH/oh-my-zsh.sh
 
+# The powerlevel10k scheme needs additional configuration sourced
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
 # Source the default shell profile
 source ~/.profile
 
@@ -118,9 +122,6 @@ setopt extended_glob             # Extended globbing behaviour
 if false; then
 complete -o nospace -C /usr/local/bin/mc mc
 fi
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 if [ -x /usr/local/bin/terraform ]; then
 autoload -U +X bashcompinit && bashcompinit
