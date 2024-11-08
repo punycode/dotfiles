@@ -96,109 +96,37 @@
     "Green Component" : 0.76959484815597534
   },
   "Keyboard Map" : {
-    "0x5e-0x60000" : {
-      "Text" : "0x1e",
-      "Action" : 11
+    "0x7f-0x100000" : {
+      "Action" : 11,
+      "Text" : "0x15"
     },
     "0xf702-0x280000" : {
-      "Text" : "b",
-      "Action" : 10
+      "Action" : 10,
+      "Text" : "b"
     },
-    "0xf702-0x260000" : {
-      "Text" : "0x1b 0x1b 0x5b 0x44",
-      "Action" : 11
+    "0xf702-0x300000" : {
+      "Action" : 11,
+      "Text" : "0x1"
     },
     "0xf703-0x280000" : {
-      "Text" : "f",
-      "Action" : 10
+      "Action" : 10,
+      "Text" : "f"
     },
-    "0xf702-0x240000" : {
-      "Text" : "[5D",
-      "Action" : 10
+    "0xf728-0x80000" : {
+      "Action" : 10,
+      "Text" : "d"
     },
-    "0xf70a-0x20000" : {
-      "Text" : "[28~",
-      "Action" : 10
+    "0xf703-0x300000" : {
+      "Action" : 11,
+      "Text" : "0x5"
     },
-    "0x2d-0x40000" : {
-      "Text" : "0x1f",
-      "Action" : 11
+    "0x7f-0x80000" : {
+      "Action" : 11,
+      "Text" : "\"0x1b 0x7f\""
     },
-    "0xf702-0x220000" : {
-      "Text" : "[D",
-      "Action" : 10
-    },
-    "0xf703-0x240000" : {
-      "Text" : "[5C",
-      "Action" : 10
-    },
-    "0xf703-0x260000" : {
-      "Text" : "[C",
-      "Action" : 10
-    },
-    "0xf700-0x280000" : {
-      "Text" : "[A",
-      "Action" : 10
-    },
-    "0xf703-0x220000" : {
-      "Text" : "[C",
-      "Action" : 10
-    },
-    "0xf700-0x260000" : {
-      "Text" : "[A",
-      "Action" : 10
-    },
-    "0xf701-0x280000" : {
-      "Text" : "[B",
-      "Action" : 10
-    },
-    "0xf700-0x240000" : {
-      "Text" : "[A",
-      "Action" : 10
-    },
-    "0xf701-0x260000" : {
-      "Text" : "[B",
-      "Action" : 10
-    },
-    "0xf700-0x220000" : {
-      "Text" : "[A",
-      "Action" : 10
-    },
-    "0xf701-0x240000" : {
-      "Text" : "[B",
-      "Action" : 10
-    },
-    "0xf72b-0x20000" : {
-      "Text" : "[F",
-      "Action" : 10
-    },
-    "0xf701-0x220000" : {
-      "Text" : "[B",
-      "Action" : 10
-    },
-    "0xf708-0x20000" : {
-      "Text" : "[25~",
-      "Action" : 10
-    },
-    "0xf709-0x20000" : {
-      "Text" : "[26~",
-      "Action" : 10
-    },
-    "0xf70b-0x20000" : {
-      "Text" : "[29~",
-      "Action" : 10
-    },
-    "0xf72b-0x40000" : {
-      "Text" : "",
-      "Action" : 4
-    },
-    "0xf729-0x20000" : {
-      "Text" : "[H",
-      "Action" : 10
-    },
-    "0xf729-0x40000" : {
-      "Text" : "",
-      "Action" : 5
+    "0xf728-0x0" : {
+      "Action" : 11,
+      "Text" : "0x4"
     }
   },
   "Visual Bell" : true,
@@ -249,7 +177,7 @@
   "Silence Bell" : false,
   "Rows" : 40,
   "Draw Powerline Glyphs" : true,
-  "Guid" : "3584D7FE-F682-4D78-9B3B-885CA23AAC9D",
+  "Guid" : "AD4EB949-C6B0-4986-A421-D271D1F9489C",
   "Ansi 14 Color (Dark)" : {
     "Red Component" : 0.37597531080245972,
     "Color Space" : "sRGB",
@@ -429,6 +357,7 @@
     "Green Component" : 0.55789834260940552
   },
   "Description" : "Default",
+  "Load Shell Integration Automatically" : false,
   "Ansi 7 Color (Dark)" : {
     "Red Component" : 0.7810397744178772,
     "Color Space" : "sRGB",
@@ -571,7 +500,7 @@
     "Alpha Component" : 0.25,
     "Green Component" : 0.77217715978622437
   },
-  "Title Components" : 1026,
+  "Title Components" : 1058,
   "Custom Directory" : "Recycle",
   "Working Directory" : "\/Users\/krupicka",
   "ASCII Anti Aliased" : true,
