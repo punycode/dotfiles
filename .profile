@@ -62,3 +62,6 @@ fi
 # Setup a Google Go default path
 export GOPATH=$HOME/Projects/Go
 export PATH=$GOPATH/bin:$PATH
+
+# Add .local/bin for locally installed binaries
+export PATH=$HOME/.local/bin:$PATH
