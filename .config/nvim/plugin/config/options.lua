@@ -50,7 +50,3 @@ vim.opt.scrolloff = 10
 
 -- Enable colored column for maximum line length
 vim.opt.colorcolumn = '+1'
-
--- Enable folding by default
-vim.opt.foldmethod = 'syntax'
-vim.opt.foldlevel = 5
