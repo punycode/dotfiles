@@ -1,5 +1,4 @@
 -- [[ Global options ]]
--- See `:help vim.opt`
 
 -- Enable line numbers and relative line numbers
 vim.opt.number = true
