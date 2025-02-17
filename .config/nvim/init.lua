@@ -4,6 +4,7 @@
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
+require('user.config.options')
 require('user.plugins')
 
 -- vim: ts=2 sts=2 sw=2 et
