@@ -14,7 +14,7 @@ vim.opt.rtp:prepend(lazypath)
 
 -- Load plugin definitions
 require('lazy').setup({
-  import = 'config.plugins'
+  import = 'user.plugins.lazy'
 })
 
 -- vim: ts=2 sts=2 sw=2 et
