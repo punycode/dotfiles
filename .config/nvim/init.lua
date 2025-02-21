@@ -4,6 +4,8 @@
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
+vim.g.have_nerd_font = true
+
 require('user.config.options')
 require('user.config.keymaps')
 require('user.config.filetypes')
