@@ -80,3 +80,8 @@ vim.opt.updatetime = 250
 
 -- Decrease mapped sequence wait time (displays which-key popup sooner)
 vim.opt.timeoutlen = 300
+
+-- Disable some of the builtin language bindings (we don't use them)
+vim.g.loaded_node_provider = 0
+vim.g.loaded_perl_provider = 0
+vim.g.loaded_python3_provider = 0
