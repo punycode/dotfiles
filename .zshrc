@@ -4,31 +4,29 @@ export ZSH="$HOME/.oh-my-zsh"
 
 # ZSH settings, which need to be specified before loading oh-my-zsh
 
-# Theme to load on start (needs to be present in $ZSH_CUSTOM)
-ZSH_THEME="powerlevel10k/powerlevel10k"
-
-# Use case sensitive completion (default: false)
-CASE_SENSITIVE="true"
-
-# Update mode for oh-my-zsh (one of disabled, auto or reminder)
-zstyle ':omz:update' mode reminder
-
-# Check/remind every x days
-zstyle ':omz:update' frequency 13
-
-# Enable history timestamps in ZSH
-HIST_STAMPS="yyyy-mm-dd"
-
 # We store our custom ZSH config files in this dot directory
 ZSH_CUSTOM="${HOME}/.zsh"
 
+ZSH_THEME="powerlevel10k/powerlevel10k" # Theme to load on start (needs to be present in $ZSH_CUSTOM)
+
+CASE_SENSITIVE="true" # Use case sensitive completion (default: false)
+HIST_STAMPS="yyyy-mm-dd" # Enable history timestamps in ZSH
+
 # Oh my ZSH enabled plugins
-# Standard plugins can be found in ~/.oh-my-zsh/plugins/*
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-plugins=(fzf brew)
+plugins=(brew fzf)
+
+# Set some oh-my-zsh options
+zstyle ':omz:update' mode reminder # Update mode for oh-my-zsh (one of disabled, auto or reminder)
+zstyle ':omz:update' frequency 13  # Check/remind every x days
+
+zstyle ':omz:plugins:brew' aliases false # disable automatic aliases for homebrew plugin
 
 # Finally initialize Oh My ZSH
 source $ZSH/oh-my-zsh.sh
+
+# HACK: We need to rerun compinit, since the brew plugin is initialized after
+# completion was already initialized
+compinit -i -d "$ZSH_COMPDUMP"
 
 # User configuration (e.g. not managed by Oh my ZSH)
 
