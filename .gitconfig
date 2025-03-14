@@ -1,46 +1,82 @@
-[color]
-	diff = auto
-	status = auto
-	branch = auto
-	interactive = auto
-[push]
-	default = simple
-	autoSetupRemote = true
-[alias]
-	br = branch
-	ci = commit
-	co = checkout
-	dump = cat-file -p
-	hist = log --pretty=format:\"%h %ai | %s%d [%an]\" --graph --date=short
-	last = log -1 HEAD
-	st = status
-	stash--unapply = !git stash show -p | git apply -R
-	type = cat-file -t
-	apportier = fetch
-	amend-here = commit --amend -C HEAD
-	typo = !git add -u && git commit -m \"Fix: Typo!\"
-	praise = blame
-	pfusch = push -f
-	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --abbrev=8
-	recent = branch --sort=-committerdate --format=\"%(committerdate:relative)%09%(refname:short)\"
-	push-and-mr = push -o merge_request.create=true
-[rerere]
-	enabled = 1
+# These settings are inspired by https://blog.gitbutler.com/how-git-core-devs-configure-git/
+#
+# They are meant to be universal, leaving out the committer information to conditionally
+# included files depending on project directories.
 [core]
-	autocrlf = input
-	excludesfile = ~/.gitignore.global
-[cola]
-	savewindowsettings = false
-[status]
-	showUntrackedFiles = no
-[merge]
-	conflictstyle = diff3
-	renamelimit = 16000
-	tool = opendiff
-[pull]
-	rebase = true
-[include]
-	path = ~/.gitconfig.local
-	path = ~/.gitconfig.secrets
+  # Automatically handle line ending style
+  autocrlf = input
+  # Global ignore rules
+  excludesFile = ~/.gitignore.global
+
 [init]
-	defaultBranch = main
+  # New repos start with this default branch instead of master
+  defaultBranch = main
+
+[branch]
+  # Sort branches by most recent commits
+  sort = -committerdate
+
+[tag]
+  # Sort tags representing versions according to semver semantics
+  sort = version:refname
+
+[column]
+  # Enable column output on terminal
+  ui = auto
+
+[status]
+  # Don't like to always see untracked files in output
+  showUntrackedFiles = no
+
+[diff]
+  # Better diff algorithm
+  algorithm = histogram
+  # Color moved lines
+  colorMoved = plain
+  # Use path prefixes, that are easier to interpret than the default a/b
+  mnemonicPrefix = true
+  # Enable file rename detection
+  renames = true
+
+[push]
+  # Simple push (push to same branch name on remote)
+  default = simple
+  # Automatically setup remote tracking
+  autoSetupRemote = true
+  # Push local tags which are contained in pushed commits history
+  followTags = true
+
+[fetch]
+  # Prune remote branches and tags on fetch
+  prune = true
+  pruneTags = true
+
+[merge]
+  # Use neovim as the merge tool of choice
+  tool = nvimdiff
+
+[rerere]
+  # Enable recording of conflict resolutions and automatically
+  # add resolved file conflicts to the index
+  enabled = true
+  autoupdate = true
+
+[include]
+  # Include local configs, which are host specific and/or sensitive
+  path = ~/.gitconfig.local
+  path = ~/.gitconfig.secrets
+
+# Include my private committer information on my public GitHub repos
+[includeIf "gitdir:~/Projects/GitHub/punycode/"]
+  path = ~/.gitconfig.punycode
+[includeIf "hasconfig:remote.*.url:git@github.com:punycode/**"]
+  path = ~/.gitconfig.punycode
+
+[alias]
+  amend-here = commit --amend -C HEAD
+  hist = log --pretty=format:\"%h %ai | %s%d [%an]\" --graph --date=short
+  last = log -1 HEAD
+  lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --abbrev=8
+  pfusch = push --force-with-lease
+  recent = branch --sort=-committerdate --format=\"%(committerdate:relative)%09%(refname:short)\"
+  stash--unapply = !git stash show -p | git apply -R
