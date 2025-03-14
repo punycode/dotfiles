@@ -1,5 +1,6 @@
 return {
-  { 'echasnovski/mini.nvim',
+  {
+    'echasnovski/mini.nvim',
     priority = 500,
     config = function()
       require('mini.basics').setup()
@@ -16,10 +17,6 @@ return {
       statusline.setup({
         use_icons = vim.g.have_nerd_font,
       })
-      -- Adapt the location part of the statusline to look nicer
-      statusline.section_location = function()
-        return '%2l:%-2v'
-      end
     end,
   },
 }
