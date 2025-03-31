@@ -42,4 +42,43 @@ vim.keymap.set('n', '<leader>sn', function()
   builtin.find_files({ cwd = vim.fn.stdpath('config') })
 end, { desc = '[S]earch [N]eovim files' })
 
+-- Setup telescope keybindings for LSP enabled buffers
+-- Some mappings override global VIM LSP keymaps with the telescope
+-- picker alternatives
+local lsp_autogroup = vim.api.nvim_create_augroup('telescope.lsp', { clear = true })
+vim.api.nvim_create_autocmd('LspAttach', {
+  desc = 'LSP keymaps for telescope on attach',
+  group = lsp_autogroup,
+  callback = function(event)
+    local map = function(keys, func, desc, mode)
+      mode = mode or 'n'
+      vim.keymap.set(mode, keys, func, { buffer = event.buf, desc = 'LSP: ' .. desc })
+    end
+    -- Jump to the definition of the word under your cursor.
+    --  This is where a variable was first declared, or where a function is defined, etc.
+    --  To jump back, press <C-t>.
+    map('gd', builtin.lsp_definitions, '[G]oto [D]efinition')
+
+    -- Find references for the word under your cursor.
+    map('grr', builtin.lsp_references, '[G]oto [R]eferences')
+
+    -- Jump to the implementation of the word under your cursor.
+    --  Useful when your language has ways of declaring types without an actual implementation.
+    map('gri', builtin.lsp_implementations, '[G]oto [I]mplementation')
+
+    -- Jump to the type of the word under your cursor.
+    --  Useful when you're not sure what type a variable is and you want to see
+    --  the definition of its *type*, not where it was *defined*.
+    map('<leader>D', builtin.lsp_type_definitions, 'Type [D]efinition')
+
+    -- Fuzzy find all the symbols in your current document.
+    --  Symbols are things like variables, functions, types, etc.
+    map('<leader>ds', builtin.lsp_document_symbols, '[D]ocument [S]ymbols')
+
+    -- Fuzzy find all the symbols in your current workspace.
+    --  Similar to document symbols, except searches over your entire project.
+    map('<leader>ws', builtin.lsp_dynamic_workspace_symbols, '[W]orkspace [S]ymbols')
+  end,
+})
+
 -- vim: ts=2 sts=2 sw=2 et
