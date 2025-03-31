@@ -16,7 +16,6 @@ vim.opt.breakindent = true
 -- Smarter indentation of blocks
 vim.opt.smartindent = true
 
-
 --[[ Folding ]]
 
 -- Use treesitter for folding by default
