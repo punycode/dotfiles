@@ -51,11 +51,6 @@ if which direnv > /dev/null; then
   eval "$(direnv hook zsh)"
 fi
 
-# Setup ASDF (if present)
-if [ -r "${HOME}/.asdf/asdf.sh" ]; then
-  source "${HOME}/.asdf/asdf.sh"
-fi
-
 # Setup a Google Go default path
 export GOPATH=$HOME/Projects/Go
 export PATH=$GOPATH/bin:$PATH
