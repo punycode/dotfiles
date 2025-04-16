@@ -13,7 +13,7 @@ CASE_SENSITIVE="true" # Use case sensitive completion (default: false)
 HIST_STAMPS="yyyy-mm-dd" # Enable history timestamps in ZSH
 
 # Oh my ZSH enabled plugins
-plugins=(asdf brew fzf)
+plugins=(brew fzf asdf)
 
 # Set some oh-my-zsh options
 zstyle ':omz:update' mode reminder # Update mode for oh-my-zsh (one of disabled, auto or reminder)
