@@ -10,5 +10,13 @@ vim.filetype.add({
   },
   pattern = {
     ['.*/%.gitlab/.+%.ya?ml'] = 'yaml.gitlab',
+    ['.*/templates/.*%.ya?ml'] = function(path, bufnr, ext)
+      local chartdir = vim.fs.root(path, 'Chart.yaml')
+      if chartdir and path:sub(1, #chartdir) then
+        return 'helm'
+      else
+        return 'yaml'
+      end
+    end,
   },
 })
