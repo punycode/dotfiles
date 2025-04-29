@@ -11,3 +11,5 @@ map('<Esc>', vim.cmd.nohlsearch, 'Remove search highlights')
 -- Folding in normal mode with tab/shift-tab
 map('<Tab>', 'za', 'Toggle fold (one level)')
 map('<S-Tab>', 'zA', 'Toggle fold (all levels)')
+
+map('<leader>td', vim.diagnostic.open_float, '[T]oggle [d]iagnostics')

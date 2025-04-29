@@ -7,7 +7,6 @@
 if vim.g.have_nerd_font then
   -- Use icons for diagnostic signs
   vim.diagnostic.config({
-    virtual_text = true,
     signs = {
       text = {
         [vim.diagnostic.severity.ERROR] = '',
