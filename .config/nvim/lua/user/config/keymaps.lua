@@ -11,3 +11,9 @@ map('<Esc>', vim.cmd.nohlsearch, 'Remove search highlights')
 -- Folding in normal mode with tab/shift-tab
 map('<Tab>', 'za', 'Toggle fold (one level)')
 map('<S-Tab>', 'zA', 'Toggle fold (all levels)')
+
+-- Enable toggling virtual diagnostic lines
+map('gK', function()
+  local current = vim.diagnostic.config().virtual_lines
+  vim.diagnostic.config({ virtual_lines = not current })
+end, 'Toggle diagnostic virtual lines')
