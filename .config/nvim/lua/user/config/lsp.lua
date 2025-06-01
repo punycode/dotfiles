@@ -54,7 +54,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
     end
 
     -- Add automatic reference highlighting if supported by the LSP server
-    if client.supports_method(vim.lsp.protocol.Methods.textDocument_documentHighlight) then
+    if client:supports_method(vim.lsp.protocol.Methods.textDocument_documentHighlight) then
       vim.api.nvim_create_autocmd({ 'CursorHold', 'CursorHoldI' }, {
         buffer = event.buf,
         group = highlight_autogroup,
