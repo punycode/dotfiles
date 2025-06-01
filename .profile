@@ -23,7 +23,7 @@ export LANG=en_US.UTF-8
 export LC_ALL="${LANG}"
 
 # Default editor
-if which nvim > /dev/null; then
+if command -v nvim > /dev/null; then
   export EDITOR=nvim
 fi
 
@@ -47,7 +47,7 @@ PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 export BC_ENV_ARGS="-l $HOME/.bcrc"
 
 # Enable direnv shell hooks
-if which direnv > /dev/null; then
+if command -v direnv > /dev/null; then
   eval "$(direnv hook zsh)"
 fi
 
