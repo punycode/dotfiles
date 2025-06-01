@@ -28,6 +28,12 @@ require('mason-lspconfig').setup({
       lspconfig[server_name].setup({})
     end,
 
+    yamlls = function()
+      lspconfig.yamlls.setup({
+        filetypes = { 'yaml', 'yaml.docker-compose', 'yaml.gitlab', 'yaml.ansible' },
+      })
+    end,
+
     -- Custom handler for some LSPs
     lua_ls = function()
       lspconfig.lua_ls.setup({
