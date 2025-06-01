@@ -4,6 +4,7 @@
 vim.filetype.add({
   extension = {
     fcc = 'yaml', -- Fedora CoreOS Butane configuration files are simply YAML files
+    hujson = 'jsonc', -- HuJSON is mostly the same as JSON with comments
   },
   filename = {
     ['.gitlab-ci.yml'] = 'yaml.gitlab', -- GitlabCI main entrypoint
