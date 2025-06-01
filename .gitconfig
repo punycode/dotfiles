@@ -82,3 +82,4 @@
   pfusch = push --force-with-lease
   recent = branch --sort=-committerdate --format=\"%(committerdate:relative)%09%(refname:short)\"
   stash--unapply = !git stash show -p | git apply -R
+  diff-nows = diff --ignore-space-at-eol -b -w --ignore-blank-lines
