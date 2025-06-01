@@ -4,6 +4,13 @@
   of LSP setup, native or plugin based.
 --]]
 
+-- Settings for the builtin diagnostic support.
+vim.diagnostic.config({
+  -- Use virtual lines beneath buffer lines to display diagnostic information. This only works in
+  -- NeoVim 0.11+ but should not bother older NeoVim versions if set.
+  virtual_lines = true,
+})
+
 if vim.g.have_nerd_font then
   -- Use icons for diagnostic signs
   vim.diagnostic.config({
