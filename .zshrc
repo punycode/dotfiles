@@ -26,7 +26,7 @@ source $ZSH/oh-my-zsh.sh
 
 # HACK: We need to rerun compinit, since the brew plugin is initialized after
 # completion was already initialized
-compinit -i -d "$ZSH_COMPDUMP"
+compinit
 
 # User configuration (e.g. not managed by Oh my ZSH)
 
