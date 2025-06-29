@@ -25,6 +25,9 @@ if vim.g.have_nerd_font then
   })
 end
 
+-- Disable LSP logging (enable if actually debugging)
+vim.lsp.set_log_level(vim.log.levels.OFF)
+
 local map = function(keys, func, desc, mode)
   mode = mode or 'n'
   vim.keymap.set(mode, keys, func, { desc = desc })
