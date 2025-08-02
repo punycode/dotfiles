@@ -69,7 +69,7 @@
 # Include my private committer information on my public GitHub repos
 [includeIf "gitdir:~/Projects/GitHub/punycode/"]
   path = ~/.gitconfig.punycode
-[includeIf "gitdir:~/Projects/Private"]
+[includeIf "gitdir:~/Projects/Private/"]
   path = ~/.gitconfig.punycode
 [includeIf "hasconfig:remote.*.url:git@github.com:punycode/**"]
   path = ~/.gitconfig.punycode
