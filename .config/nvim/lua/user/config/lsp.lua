@@ -6,8 +6,7 @@
 
 -- Settings for the builtin diagnostic support.
 vim.diagnostic.config({
-  -- Use virtual lines beneath buffer lines to display diagnostic information. This only works in
-  -- NeoVim 0.11+ but should not bother older NeoVim versions if set.
+  -- Use virtual lines beneath buffer lines to display diagnostic information.
   virtual_lines = true,
 })
 
@@ -28,20 +27,6 @@ end
 -- Disable LSP logging (enable if actually debugging)
 vim.lsp.set_log_level(vim.log.levels.OFF)
 
-local map = function(keys, func, desc, mode)
-  mode = mode or 'n'
-  vim.keymap.set(mode, keys, func, { desc = desc })
-end
-
--- For nvim < 0.11 we add the 0.11+ default LSP keymaps for forward compatibility
-if vim.fn.has('nvim-0.11') == 0 then
-  map('grn', vim.lsp.buf.rename, 'LSP: Rename symbol')
-  map('gra', vim.lsp.buf.code_action, 'LSP: Code action', { 'n', 'x' })
-  map('grr', vim.lsp.buf.references, 'LSP: Go to references')
-  map('gri', vim.lsp.buf.implementation, 'LSP: Go to implementation')
-  map('gO', vim.lsp.buf.document_symbol, 'LSP: Document symbol')
-  map('<C-S>', vim.lsp.buf.signature_help, 'LSP: Signature help', { 'i', 's' })
-end
 -- Setup autocommands on LspAttach/LspDetach
 local lsp_autogroup = vim.api.nvim_create_augroup('user.lsp', { clear = true })
 local highlight_autogroup = vim.api.nvim_create_augroup('user.lsp.highlight', { clear = true })
