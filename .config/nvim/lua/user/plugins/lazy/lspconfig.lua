@@ -1,13 +1,24 @@
--- LSP configuration plugins (mostly nvim-lspconfig and related extensions for other plugins)
+-- LSP configuration plugins (mostly mason-lspconfig, nvim-lspconfig and related extensions for other plugins)
 return {
-  'neovim/nvim-lspconfig',
+  -- The magic happens in mason-lspconfig, which uses nvim-lspconfig and mason
+  -- to actually install and configure LSPs.
+  'williamboman/mason-lspconfig.nvim',
+  version = '2.x',
   dependencies = {
     -- Declare here, but setup is done in mason.lua
     'williamboman/mason.nvim',
-    -- Allows using LSP config names when installing tools via mason.
-    'williamboman/mason-lspconfig.nvim',
+    -- The configs are sourced here
+    { 'neovim/nvim-lspconfig', version = '2.x' },
   },
-  config = function()
-    require('user.plugins.lspconfig')
-  end,
+
+  opts = {
+    -- Always install these LSPs by default
+    ensure_installed = {
+      'gopls',
+      'gitlab_ci_ls',
+      'lua_ls',
+      'terraformls',
+      'yamlls',
+    },
+  },
 }
