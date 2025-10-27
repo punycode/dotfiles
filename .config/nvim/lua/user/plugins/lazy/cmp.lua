@@ -22,11 +22,13 @@ return {
     -- need to be registered with LSPs, which are initialized long before
     -- entering Insert mode.
     init = function()
-      -- Add the completion capabilities to the default config for every LSP
-      local cmp_nvim_lsp = require('cmp_nvim_lsp')
-      vim.lsp.config('*', {
-        capabilities = cmp_nvim_lsp.default_capabilities(),
-      })
+      if vim.fn.has('nvim-0.11') == 0 then
+        -- Add the completion capabilities to the default config for every LSP
+        local cmp_nvim_lsp = require('cmp_nvim_lsp')
+        vim.lsp.config('*', {
+          capabilities = cmp_nvim_lsp.default_capabilities(),
+        })
+      end
     end,
   },
 }

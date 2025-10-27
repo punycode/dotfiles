@@ -4,6 +4,12 @@ return {
   -- to actually install and configure LSPs.
   'williamboman/mason-lspconfig.nvim',
   version = '2.x',
+
+  -- Only enable on NeoVim 0.11+, since this is now mandatory for this setup
+  enabled = function()
+    return (vim.fn.has('nvim-0.11') == 1)
+  end,
+
   dependencies = {
     -- Declare here, but setup is done in mason.lua
     'williamboman/mason.nvim',
