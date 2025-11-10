@@ -6,7 +6,6 @@ require('telescope').setup({})
 -- Enable Telescope extensions if they are installed
 pcall(require('telescope').load_extension, 'fzf')
 pcall(require('telescope').load_extension, 'ui-select')
-pcall(require('telescope').load_extension, 'notify')
 
 local builtin = require('telescope.builtin')
 -- Some keymaps to quickly trigger telescope pickers for common use cases
