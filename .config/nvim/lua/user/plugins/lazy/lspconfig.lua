@@ -22,6 +22,7 @@ return {
     ensure_installed = {
       'gopls',
       'gitlab_ci_ls',
+      'jsonls',
       'lua_ls',
       'terraformls',
       'yamlls',
