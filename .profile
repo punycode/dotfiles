@@ -18,6 +18,9 @@ alias ll="ls -lhF"
 alias lt="ls -lhtrF"
 alias l.="ls -lhtrdF .*"
 
+# Simple helper to jump to the top-level directory in a git repository
+alias gtl='cd $(git rev-parse --show-toplevel)'
+
 # Use english locales by default
 export LANG=en_US.UTF-8
 export LC_ALL="${LANG}"
