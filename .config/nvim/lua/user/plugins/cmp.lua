@@ -4,6 +4,9 @@
 local cmp = require('cmp')
 local luasnip = require('luasnip')
 
+-- Automatically lazy-load snippets (like friendly-snippets)
+require('luasnip.loaders.from_vscode').lazy_load()
+
 cmp.setup({
   -- Setup the sources to use
   sources = cmp.config.sources({
@@ -28,12 +31,31 @@ cmp.setup({
     completion = cmp.config.window.bordered(),
     documentation = cmp.config.window.bordered(),
   },
+
   -- Make autocomplete dialog trigger/select similar to other IDEs
   mapping = cmp.mapping.preset.insert({
     ['<C-Space>'] = cmp.mapping.complete(),
 
     -- This works in conjunction with the preselect option easily confirm
     -- the first item from the selection with having to navigate the suggestions
-    ['<CR>'] = cmp.mapping.confirm({ select = true }),
+    ['<CR>'] = cmp.mapping.confirm({ select = false }),
+
+    -- Jump to the next snippet placeholder
+    ['<C-f>'] = cmp.mapping(function(fallback)
+      if luasnip.locally_jumpable(1) then
+        luasnip.jump(1)
+      else
+        fallback()
+      end
+    end, { 'i', 's' }),
+
+    -- Jump to the previous snippet placeholder
+    ['<C-b>'] = cmp.mapping(function(fallback)
+      if luasnip.locally_jumpable(-1) then
+        luasnip.jump(-1)
+      else
+        fallback()
+      end
+    end, { 'i', 's' }),
   }),
 })
