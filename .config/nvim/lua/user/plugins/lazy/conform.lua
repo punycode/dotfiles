@@ -16,6 +16,7 @@ return {
       desc = '[F]ormat buffer',
     },
   },
+
   opts = {
     formatters = {
       -- Add formatting for grafana alloy configuration files
@@ -28,13 +29,19 @@ return {
         args = { 'fmt', '-' },
       },
     },
+
     formatters_by_ft = {
       alloy = { 'alloy_fmt' },
       lua = { 'stylua' },
     },
-    format_on_save = {
-      timeout_ms = 500,
-      lsp_format = 'fallback',
-    },
+
+    -- Allow format on save to be disabled on the fly
+    format_on_save = function(bufnr)
+      -- Disable with a global or buffer-local variable
+      if vim.g.disable_autoformat or vim.b[bufnr].disable_autoformat then
+        return
+      end
+      return { timeout_ms = 500, lsp_format = 'fallback' }
+    end,
   },
 }
