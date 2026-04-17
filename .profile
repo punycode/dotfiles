@@ -60,3 +60,7 @@ export PATH=$GOPATH/bin:$PATH
 
 # Add .local/bin for locally installed binaries
 export PATH=$HOME/.local/bin:$PATH
+
+# HomeBrew settings
+export HOMEBREW_AUTO_UPDATE_SECS=86400
+export HOMEBREW_NO_ENV_HINTS=1
