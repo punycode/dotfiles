@@ -2,7 +2,13 @@ return {
   'echasnovski/mini.nvim',
   config = function()
     -- Sane defaults for VIM options, which have not been set in our own config
-    require('mini.basics').setup()
+    require('mini.basics').setup({
+      mappings = {
+        -- Don't add mappings (overwrites some builtins)
+        basic = false,
+      },
+    })
+
     -- Not Artificial Intelligence, but additional text-objects for around/inner
     require('mini.ai').setup()
 
