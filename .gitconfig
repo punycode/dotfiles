@@ -83,3 +83,6 @@
   recent = branch --sort=-committerdate --format=\"%(committerdate:relative)%09%(refname:short)\"
   stash--unapply = !git stash show -p | git apply -R
   diff-nows = diff --ignore-space-at-eol -b -w --ignore-blank-lines
+  trash-merged = !git branch --merged origin/HEAD --no-contains origin/HEAD --format \"%(refname:lstrip=2)\" \
+    | grep -E -v -e \"^(main|master|production)$\" \
+    | xargs -r git branch -d
